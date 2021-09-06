@@ -1,0 +1,19 @@
+name: CI/CD Pipeline
+on:
+  push:
+    branches: [ release ]
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1
+      - uses: actions/checkout@v2
+      # Step 2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      # Step 3
+      - name: List files
+        run: ls
